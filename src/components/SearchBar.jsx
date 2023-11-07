@@ -1,22 +1,31 @@
 import { FaSearch } from "react-icons/fa";
 import { RPC } from "../data/constant";
 import Web3 from "web3";
+import Container from "./Container";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 function SearchBar() {
-  const search = async () => {
-    console.log("searching...");
-    const web3 = new Web3(RPC);
-    // get the chain id
-    const chainId = await web3.eth.getChainId();
-    console.log(chainId);
+  const [searchType, setSearchType] = useState("");
+  const navigate = useNavigate();
 
-    // get latest block number
-    const blockNumber = await web3.eth.getBlockNumber();
-    console.log(blockNumber);
+  const search = async () => {
+    // console.log("searching...");
+    // const web3 = new Web3(RPC);
+    // // get the chain id
+    // const chainId = await web3.eth.getChainId();
+    // console.log(chainId);
+
+    // // get latest block number
+    // const blockNumber = await web3.eth.getBlockNumber();
+    // console.log(blockNumber);
     //
+
+    navigate(`/address/${searchType}`);
   };
+
   return (
-    <div className="w-full h-[200px] bg-[#1f2937] md:px-6 py-8">
-      <div className="max-w-[1400px] w-full mx-auto px-6 space-y-3">
+    <div className="w-full h-[240px] bg-[#1f2937] md:px-6 py-8">
+      <Container className="px-6 space-y-3">
         <h2 className="text-lg text-white font-semibold">
           AES Blockchain Explorer
         </h2>
@@ -32,6 +41,8 @@ function SearchBar() {
             type="text"
             placeholder="Search by Address / Tokens"
             className="flex-1 tex-gray-600 font-semibold w-full bg-transparent focus:outline-none"
+            value={searchType}
+            onChange={(e) => setSearchType(e.target.value)}
           />
 
           <button
@@ -41,7 +52,7 @@ function SearchBar() {
             <FaSearch size={16} />
           </button>
         </div>
-      </div>
+      </Container>
     </div>
   );
 }

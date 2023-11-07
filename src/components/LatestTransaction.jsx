@@ -3,6 +3,7 @@ import { BiCube } from "react-icons/bi";
 import { RPC } from "../data/constant";
 import Web3 from "web3";
 import moment from "moment";
+import Container from "./Container";
 
 function SingleItem({ number, type, time, fee, recipient, txns, reward }) {
   return (
@@ -90,7 +91,7 @@ function LatestTransaction() {
     getLatestFiveTransactions();
   }, []);
   return (
-    <div className="max-w-[1400px] w-full mx-auto px-6 space-y-3 mt-6">
+    <Container className="mt-6">
       <div className="flex flex-col md:flex-row items-start gap-6">
         <div className="bg-white border border-gray-200 rounded-lg w-full">
           <h2 className="border-b pb-4 font-semibold py-2 px-4">
@@ -161,7 +162,7 @@ function LatestTransaction() {
           <div className="w-full"></div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 

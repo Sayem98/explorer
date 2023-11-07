@@ -1,18 +1,19 @@
-import InfoCard from "./components/InfoCard";
-import LatestTransaction from "./components/LatestTransaction";
-import Nav from "./components/Nav";
-import SearchBar from "./components/SearchBar";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import AppLayout from "./components/AppLayout";
+import Home from "./pages/Home";
+import Result from "./pages/Result";
 
 function App() {
   return (
-    <>
-      <div className="App">
-        <Nav />
-        <SearchBar />
-        <InfoCard />
-        <LatestTransaction />
-      </div>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AppLayout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/address/:address" element={<Result />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

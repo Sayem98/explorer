@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { RPC } from "../data/constant";
 import Web3 from "web3";
+import Container from "./Container";
 function InfoCard() {
   const [gasPrice, setGasPrice] = useState(0);
   const [blockNumber, setBlockNumber] = useState(0);
   const [etherPrice, setEtherPrice] = useState(0);
   const [lastSafeBlock, setLastSafeBlock] = useState(0);
+
   useEffect(() => {
     const getData = async () => {
       // get gas price
@@ -34,9 +36,10 @@ function InfoCard() {
     };
     getData();
   }, []);
+
   return (
-    <div className="max-w-[1400px] w-full mx-auto px-6 space-y-3">
-      <div className="p-4 bg-white border border-gray-200 rounded-lg -mt-8">
+    <Container className="-mt-16">
+      <div className="p-4 bg-white border border-gray-200 rounded-lg">
         <div className="grid grid-cols-2 gap-4">
           <div className="flex items-start gap-4 border-b pb-2">
             <img src="ethereum.svg" alt="" className="w-5" />
@@ -73,7 +76,7 @@ function InfoCard() {
           </div>
         </div>
       </div>
-    </div>
+    </Container>
   );
 }
 
