@@ -8,7 +8,7 @@ function SearchBar() {
   const [searchType, setSearchType] = useState("");
   const navigate = useNavigate();
 
-  const search = async () => {
+  const handleSearch = async () => {
     // console.log("searching...");
     // const web3 = new Web3(RPC);
     // // get the chain id
@@ -19,6 +19,7 @@ function SearchBar() {
     // const blockNumber = await web3.eth.getBlockNumber();
     // console.log(blockNumber);
     //
+    if (!searchType) return;
 
     navigate(`/address/${searchType}`);
   };
@@ -40,14 +41,14 @@ function SearchBar() {
           <input
             type="text"
             placeholder="Search by Address / Tokens"
-            className="flex-1 tex-gray-600 font-semibold w-full bg-transparent focus:outline-none"
+            className="flex-1 tex-gray-600 font-medium w-full bg-transparent focus:outline-none"
             value={searchType}
             onChange={(e) => setSearchType(e.target.value)}
           />
 
           <button
-            className="bg-[#0670a6] px-4 py-3 text-white rounded-lg"
-            onClick={search}
+            className="bg-[#3c9fd1] px-4 py-3 text-white rounded-lg"
+            onClick={handleSearch}
           >
             <FaSearch size={16} />
           </button>

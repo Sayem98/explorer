@@ -2,7 +2,7 @@
 function Container({ children, className }) {
   return (
     <div
-      className={`max-w-[1400px] w-full mx-auto px-6 overflow-hidden ${className}`}
+      className={`max-w-[1400px] w-full mx-auto px-4 overflow-hidden ${className}`}
     >
       {children}
     </div>

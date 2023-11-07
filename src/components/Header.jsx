@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+
 function Header() {
   return (
-    <nav className="p-3 max-w-[1400px] w-full mx-auto">
-      <p className="md:text-2xl">AES Blockchain Explorer</p>
+    <nav className="bg-white">
+      <p className="p-3 max-w-[1400px] w-full mx-auto font-semibold md:text-2xl">
+        <Link to="/">AES Blockchain Explorer</Link>
+      </p>
     </nav>
   );
 }
