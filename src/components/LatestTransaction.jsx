@@ -44,7 +44,7 @@ function SingleItem({ number, type, time, fee, recipient, txns, reward }) {
       </div>
 
       <span className="border self-start text-sm border-gray-300 p-1 rounded-xl">
-        {reward} Eth
+        {reward} AES
       </span>
     </div>
   );

@@ -42,15 +42,15 @@ function InfoCard() {
       <div className="p-4 bg-white border border-gray-200 rounded-lg">
         <div className="grid grid-cols-2 gap-4">
           <div className="flex items-start gap-4 border-b pb-2">
-            <img src="ethereum.svg" alt="" className="w-5" />
+            <img src="logo.jpg" alt="" className="w-5" />
             <div className="flex flex-col">
               <span className="text-gray-600 uppercase">AES Price</span>
-              <strong className="text-gray-500">$119000</strong>
+              <strong className="text-gray-500">$64</strong>
             </div>
           </div>
 
           <div className="flex items-start gap-4 border-b pb-2">
-            <img src="ethereum.svg" alt="" className="w-5" />
+            <img src="logo.jpg" alt="" className="w-5" />
             <div className="flex flex-col">
               <span className="text-gray-600 uppercase">
                 Latest Block Number
@@ -60,7 +60,7 @@ function InfoCard() {
           </div>
 
           <div className="flex items-start gap-4">
-            <img src="ethereum.svg" alt="" className="w-5" />
+            <img src="logo.jpg" alt="" className="w-5" />
             <div className="flex flex-col">
               <span className="text-gray-600 uppercase">Gas Price</span>
               <strong className="text-gray-500">{gasPrice} Gwei</strong>
@@ -68,7 +68,7 @@ function InfoCard() {
           </div>
 
           <div className="flex items-start gap-4">
-            <img src="ethereum.svg" alt="" className="w-5" />
+            <img src="logo.jpg" alt="" className="w-5" />
             <div className="flex flex-col">
               <span className="text-gray-600 uppercase">Last Safe Block</span>
               <strong className="text-gray-500">{lastSafeBlock}</strong>
